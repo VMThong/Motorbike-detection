@@ -1,21 +1,17 @@
 # Motorbike-detection
 
 ## motorbike_project.py
-Thông tin project
-+ Project này sử dụng model YOLOv4 đã được train với hơn 200 tấm hình xe máy để giúp phát hiện đối tượng trong từng frame của video.
-+ Để có thể gắn id cho những xe máy đã được phát hiện bằng model YOLOv4, thì project có sử dụng thư viện object_detection và deep_sort.deep_sort 
-  được lấy từ khóa học Object Detection của pysource.com.
-+ Vùng để track các xe được chia thành 99 ô grid để có thể ghi lại thông tin xe khi đi vào từng ô grid này để hỗ trợ cho việc tính toán các chỉ số.
-+ Các tọa độ xe máy thu thập được từ model YOLOv4 và id của từng xe sẽ được sử dụng tính toán vận tốc tức thời và vận tốc trung bình không gian của xe máy.
-+ Các thông tin về vận tốc của từng xe sẽ được hiển thị trong video để có thể giúp xác định vận tốc xe khi xe khi di chuyển tới từng ô grid khác nhau.
-+ Project này vẫn đang được phát triển và sửa đổi để có thể thu thập được nhiều chỉ số khác nhau.
+Project Information:
++ This project utilizes the YOLOv4 model that has been trained with over 200 images of motorcycles to detect objects in each frame of a video. To assign an ID to the motorcycles detected by the YOLOv4 model, the project uses the object_detection and deep_sort libraries, which were obtained from the Object Detection course on pysource.com. The area for tracking the motorcycles is divided into 99 grid cells to record information about the motorcycles as they enter each cell to support the calculation of various metrics.
++ The motorcycle coordinates collected from the YOLOv4 model and the IDs of each motorcycle will be used to calculate the instant and average spatial velocities of the motorcycles. The velocity information of each motorcycle will be displayed in the video to help determine the velocity of the motorcycle as it moves through different grid cells.
++ This project is still being developed and modified to collect various other metrics.
 
 ## grid.py
-+ File này sẽ chứa các class để hỗ trợ cho việc ghi lại thông tin id cũng như tọa độ của xe máy.
-+ Các class bên trong cũng có các hàm hỗ trợ việc phân tích để tính toán vận tốc xe.
++ This file will contain classes to support recording the ID and coordinates of motorcycles.
++ The classes inside also have functions to support analysis for calculating motorcycle speed.
 
 ## motorbike_project_demo.py
-+ Project này là bản demo của motorbike_project.py để triển khai các ý tưởng ban đầu.
-+ Phạm vi thu thập dữ liệu chỉ giới hạn trong 6 vùng với 3 vùng cho làn trên và 3 vùng cho làn bên dưới.
-+ Thông tin thu thập được chỉ có vận tốc trung bình không gian, id xe máy, thời gian vào và ra khỏi vùng, vị trí làn mà xe đang đi hiện tại.
-+ Dữ liệu sau khi được thu thập sẽ được đẩy vào PostgreSQL.
++ This project is a demo version of motorbike_project.py to implement initial ideas.
++ The data collection scope is limited to 6 regions with 3 regions for the upper lane and 3 regions for the lower lane.
++ The collected information includes the average spatial velocity, motorbike ID, entry and exit time from the region, and the current lane position of the motorbike.
++ After being collected, the data will be pushed into PostgreSQL.
